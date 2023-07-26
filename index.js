@@ -29,6 +29,15 @@ async function invokeAction({ action, id, name, email, phone }) {
       const newContact = await contactsServise.addContact(name, email, phone);
       return console.log(newContact);
 
+    case 'updata':
+      const updataContact = await contactsServise.updateContact(
+        id,
+        name,
+        email,
+        phone
+      );
+      return console.log(updataContact);
+
     default:
       console.warn('\x1B[31m Unknown action type!');
   }
